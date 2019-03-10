@@ -1,0 +1,34 @@
+<% include ./partials/header %>
+<div class="container jumbotron">
+<h1 class="">Students Page</h1>
+
+  
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">Roll No.</th>
+    <th scope="col">Name</th>
+    <th scope="col">Branch</th>
+    <th scope="col">DMC Taken</th>
+    <th scope="col">Updated On</th>
+    <th scope="col">More Information</th>
+
+  </tr>
+</thead>
+<% students.forEach(function(student){ %>
+<tbody>
+  <tr>
+    <th scope="row"><%= student.roll_no %></th>
+    <td><%= student.name %></td>
+    <td><%= student.branch %></td>
+    <td><%= student.DMC %></td>
+    <td><%= student.created.toDateString() %></td>
+    <td><a href="/students/<%=student._id %>">Read More</a></td>
+  </tr>
+  <%})%>
+</tbody>
+</table>
+
+
+</div>
+<% include ./partials/footer %>

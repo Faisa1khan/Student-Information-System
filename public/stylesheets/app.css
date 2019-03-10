@@ -1,0 +1,17 @@
+form {
+width: 30%;
+margin: 50px auto;
+}
+
+.card {
+    width: 30%;
+
+}
+
+.detail {
+    display: grid;
+    
+    list-style: none;
+    grid-gap: 20px;
+    padding: 0;
+}
