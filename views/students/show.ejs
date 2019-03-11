@@ -1,0 +1,60 @@
+<% include ../partials/header %>
+<h1></h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+<div class="card" style="width: 18rem;">
+  <img src="https://via.placeholder.com/100x70" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><%= student.name %></h5>
+    <p class="card-text"></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Roll Number - <%= student.roll_no %></li>
+    <li class="list-group-item">Branch - <%= student.branch %></li>
+    <li class="list-group-item">DMC taken - <%= student.DMC %></li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Edit</a>
+    <a href="#" class="card-link">Delete</a>
+  </div>
+</div>
+</div>
+<div class="col-9">
+<h3>Performance Semester Wise</h3>
+<table class="table" id="performance">
+<thead>
+  <tr>
+    <th scope="col">Semester</th>
+    <th scope="col">DMC No.</th>
+    <th scope="col">Regn No.</th>
+    <th scope="col">Roll No.</th>
+    <th scope="col">Marks obtained</th>
+    <th scope="col">Out of</th>
+    <th scope="col">Reappear</th>
+    <th scope="col">Last Updated</th>
+    
+
+  </tr>
+  </thead>
+  <% student.results.forEach(function(result){ %>
+<tbody>
+  <tr>
+    <th scope="row"><%= result.sem %></th>
+    <td><%=result.dmc_no %></td>
+    <td><%= result.regn_no %></td>
+    <td><%=result.roll_no %></td>
+    <td><%=result.total_marks %></td>
+    <td><%= result.max_marks %></td>
+    <td><%=result.reappear %></td>
+    <td><%= student.created.toDateString() %></td>
+  </tr>
+  <%})%>
+</tbody>
+</table>
+  </div>
+  </div>
+</div>
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,51 @@
+<% include ../partials/header %>
+
+<div class="jumbotron">
+
+<form action="/students/<%= student._id%>/results" method="POST">
+<h1>Add result of  <%= student.name%></h1>
+<div class="form-group">
+<label for"roll_nos">Semester</label>
+<input type="text"  id="roll_no" class="form-control " name="result[sem]" placeholder="Semester" >
+</div>
+
+<div class="form-group">
+<label for"roll_nos">DMC Number</label>
+<input type="text"  id="roll_no" class="form-control " name="result[dmc_no]" placeholder="DMC No." >
+</div>
+
+<div class="form-group">
+<label for"roll_nos">Registration Number</label>
+<input type="text"  id="roll_no" class="form-control " name="result[regn_no]" placeholder="Registration No." >
+</div>
+
+<div class="form-group">
+<label for"roll_nos">Roll Number</label>
+<input type="text"  id="roll_no" class="form-control " name="result[roll_no]" placeholder="Roll No." >
+</div>
+
+<div class="form-group">
+<label for"name">Total Marks</label>
+<input type="text"  id="name" class="form-control " name="result[total_marks]" placeholder="Total Marks" >
+</div>
+
+<div class="form-group">
+<label for"branch">Maximum Marks</label>
+<input type="text"  id="branch" class="form-control " name="result[max_marks]" placeholder="Maximum Marks" >
+</div>
+
+<div class="form-group">
+<label for"dmc">Reappear</label>
+<input type="text"  id="dmc" class="form-control " name="result[reappear]" placeholder="How many reappears?" >
+</div>
+
+
+
+
+
+<button type="submit" class="btn btn-primary">Submit</button>
+
+
+</form>
+</div>
+<% include ../partials/footer %>
