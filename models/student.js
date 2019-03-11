@@ -7,7 +7,13 @@ var studentSchema = new mongoose.Schema({
     branch: String,
     DMC: String, 
     image: String,
-    created:  {type: Date, default: Date.now}
+    created:  {type: Date, default: Date.now},
+    results: [
+        {
+           type: mongoose.Schema.Types.ObjectId,
+           ref: "Result"
+        }
+     ]
 });
 
-module.exports =  mongoose.model("student", studentSchema);
+module.exports =  mongoose.model("Student", studentSchema);
