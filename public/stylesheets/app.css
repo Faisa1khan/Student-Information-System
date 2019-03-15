@@ -1,3 +1,8 @@
+
+.container {
+    padding-top: 50px;
+}
+
 form {
 width: 30%;
 margin: 50px auto;
@@ -15,3 +20,19 @@ margin: 50px auto;
     grid-gap: 20px;
     padding: 0;
 }
+
+.card-landing{
+    width: 20em;
+
+}
+
+
+
+.landing-main{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 400px 400px 400px;
+  grid-gap: 20px;
+}
+
+

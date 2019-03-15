@@ -1,17 +1,17 @@
 <% include ./partials/header %>
-<div class="container-fluid jumbotron">
-<h1 class="">Students Page</h1>
+<div class="container-fluid ">
+
 
   
-<table class="table">
-<thead>
+<table class="table table-bordered ">
+<thead class="table-active">
   <tr>
     <th scope="col">Roll No.</th>
     <th scope="col">Name</th>
     <th scope="col">Branch</th>
     <th scope="col">DMC Taken</th>
     <th scope="col">Updated On</th>
-    <th scope="col">More Information</th>
+    <th scope="col">Action</th>
 
   </tr>
 </thead>
@@ -23,7 +23,7 @@
     <td><%= student.branch %></td>
     <td><%= student.DMC %></td>
     <td><%= student.created.toDateString() %></td>
-    <td><a href="/students/<%=student._id %>">Read More</a></td>
+    <td><a href="/students/<%=student._id %>">More Information</a></td>
   </tr>
   <%})%>
 </tbody>

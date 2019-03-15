@@ -1,5 +1,5 @@
 var express      = require("express"),
-
+methodOverride = require("method-override"),
 bodyParser      = require("body-parser"),
 mongoose        = require("mongoose"),
 Student            = require("./models/student.js"),
@@ -15,7 +15,7 @@ mongoose.connect("mongodb://localhost/examination_app");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-
+app.use(methodOverride("_method"));
 seedDB();
 
 //ROUTES
@@ -53,6 +53,27 @@ app.post("/students", function(req, res){
     });
 
 });
+app.get("/students/:id/edit", function(req,res){
+    Student.findById(req.params.id, function(err, student){
+       if(err){
+           res.redirect("/students");
+       }else{
+        res.render("students/edit", {student: student});
+       }
+    });
+    
+});
+
+app.put("/students/:id", function(req,res){
+    Student.findByIdAndUpdate(req.params.id, req.body.student,function(err, updatedStudent){
+      if(err){
+        res.redirect("/students");
+      }
+      else{
+        res.redirect("/students");
+      }
+    });
+});
 
 //show routes
 
@@ -68,6 +89,8 @@ app.get("/students/:id", function(req, res){
     }
     });
 });
+
+
 
 
 //results routes
