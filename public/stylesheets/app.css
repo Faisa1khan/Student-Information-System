@@ -33,6 +33,34 @@ margin: 50px auto;
   display: grid;
   grid-template-columns: 400px 400px 400px;
   grid-gap: 20px;
+  grid-row-gap: 50px;
+}
+.landing-main li a {
+    text-decoration: none;
+    color: aliceblue;
+    opacity: 1;
+    transition: .3s cubic-bezier(.7,1,.7,1);
 }
 
+.landing-main li a:hover {
+    opacity: 0.7;
+}
+
+
+.card-landing .card-body{
+    background-color: #5C97FF ;
+}
+
+#delete{
+    margin: 0;
+}
+#action li{
+    display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+  float: left;
+}
+th, tr{
+    text-align: center;
+}
 

@@ -75,6 +75,20 @@ app.put("/students/:id", function(req,res){
     });
 });
 
+app.delete("/students/:id", function(req,res){
+
+    Student.findByIdAndRemove(req.params.id, function(err){
+        if(err){
+            res.redirect("/students");
+          }
+          else{
+            res.redirect("/students");
+          }
+    });
+    
+});
+
+
 //show routes
 
 app.get("/students/:id", function(req, res){

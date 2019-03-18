@@ -1,5 +1,5 @@
 <% include ./partials/header %>
-<div class="container-fluid ">
+<div class="container ">
 
 
   
@@ -11,7 +11,8 @@
     <th scope="col">Branch</th>
     <th scope="col">DMC Taken</th>
     <th scope="col">Updated On</th>
-    <th scope="col">Action</th>
+    <th scope="col"></th>
+    
 
   </tr>
 </thead>
@@ -23,7 +24,25 @@
     <td><%= student.branch %></td>
     <td><%= student.DMC %></td>
     <td><%= student.created.toDateString() %></td>
-    <td><a href="/students/<%=student._id %>">More Information</a></td>
+    
+    
+    </td>
+    <td>
+    <ul id="action">
+    
+    <li>
+    <a href="/students/<%=student._id %>" class="btn btn-success">View </a >
+    </li>
+    <li>
+    <a href="/students/<%=student._id %>/edit" class="btn btn-primary">Edit</a >
+    </li>
+    <li>
+    <form id="delete" action="/students/<%= student._id%>?_method=DELETE" method="POST">
+    <button class="btn btn-danger">Delete</button></form>
+    </li>
+    </ul>
+    
+    </td>
   </tr>
   <%})%>
 </tbody>
