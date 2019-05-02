@@ -3,51 +3,54 @@
 
 
   
-<table class="table table-bordered ">
-<thead class="table-active">
+<table class="table table-striped table-bordered mydatatable student-table" style="width: 100%">
+<thead >
   <tr>
-    <th scope="col">Roll No.</th>
+    <th scope="col">Regn No.</th>
     <th scope="col">Name</th>
     <th scope="col">Branch</th>
     <th scope="col">DMC Taken</th>
     <th scope="col">Updated On</th>
-    <th scope="col"></th>
-    
-
+    <th scope="col">Actions</th>
   </tr>
 </thead>
-<% students.forEach(function(student){ %>
 <tbody>
+<% students.forEach(function(student){ %>
+
   <tr>
-    <th scope="row"><%= student.roll_no %></th>
+    <th scope="row"><%= student.regn_no %></th>
     <td><%= student.name %></td>
     <td><%= student.branch %></td>
     <td><%= student.DMC %></td>
     <td><%= student.created.toDateString() %></td>
-    
-    
-    </td>
+  
     <td>
     <ul id="action">
-    
     <li>
-    <a href="/students/<%=student._id %>" class="btn btn-success">View </a >
+    <a href="/students/<%=student._id %>" class="fas fa-eye"></a >
     </li>
+
     <li>
-    <a href="/students/<%=student._id %>/edit" class="btn btn-primary">Edit</a >
+    <a href="/students/<%=student._id %>/edit" class="fas fa-user-edit"></a >  
     </li>
+
     <li>
     <form id="delete" action="/students/<%= student._id%>?_method=DELETE" method="POST">
-    <button class="btn btn-danger">Delete</button></form>
-    </li>
-    </ul>
+    <button class="fas fa-trash-alt"></button></form>
     
+    
+    </li>
+
+    </ul>
     </td>
   </tr>
   <%})%>
+
 </tbody>
 </table>
 
 
 </div>
+       
+
 <% include ./partials/footer %>

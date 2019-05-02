@@ -1,20 +1,59 @@
-<% include ../partials/header %>
-<h1></h1>
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-3">
-<div class="card" style="width: 15rem;">
-  <img src="https://via.placeholder.com/100x70" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"><%= student.name %></h5>
-    <p class="card-text"></p>
-  </div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Examination Management</title>
+        
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" >
+        <link rel="stylesheet" href="/stylesheets/all.css" >
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="/stylesheets/app.css" >
 
- 
-</div>
-</div>
-<div class="col-9">
-<h3>Performance Semester Wise   <a  class=" btn btn-success"  href="/students/<%= student._id%>/results/new">Add Result</a></h3>
+        </head>
+        <body>
+
+          <div class="d-flex" id="wrapper">
+        
+            <!-- Sidebar -->
+            <div class=" border-right" id="sidebar-wrapper">
+              <div class="sidebar-heading"><%= student.name %></div>
+              <div class="list-group list-group-flush">
+
+                <a href="#" class="list-group-item list-group-item-action ">Performance</a>
+           
+         
+               
+              </div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+        
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+        
+              <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/students/<%= student._id%>/results/new">Add Result</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/students">Home</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </nav>
+      
+<div class="container-fluid">
+  
+
 
 <table class="table table-bordered " id="performance">
 <thead class="table-active">
@@ -51,4 +90,5 @@
 </div>
 
 
-<% include ../partials/footer %>
+        </body>
+</html>

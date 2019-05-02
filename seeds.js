@@ -6,36 +6,83 @@ Result               = require("./models/result");
 
 var data = [
     {
-           roll_no: "15CSE001",
+           regn_no: "15CSE001",
            name: "Chaman",
            branch: "CSE",
            DMC: "Yes", 
     },
     {
-        roll_no: "15CSE002",
+        regn_no: "15CSE002",
            name: "Faisal",
            branch: "CSE",
            DMC: "No", 
     },
     {
-        roll_no: "15CSE003",
+        regn_no: "15CSE003",
         name: "Sanaullah",
         branch: "CSE",
         DMC: "Yes", 
     },
     {
-        roll_no: "15CSE004",
+        regn_no: "15CSE004",
         name: "Sohit",
         branch: "CSE",
         DMC: "Yes", 
     },
 
     {
-        roll_no: "15CSE005",
+        regn_no: "15CSE005",
         name: "Touhid Alvi",
         branch: "CSE",
         DMC: "Yes", 
-    }
+    },
+
+    {
+        regn_no: "15ECE001",
+        name: "Alvi",
+        branch: "ECE",
+        DMC: "Yes", 
+    },
+
+    {
+        regn_no: "15ECE002",
+        name: "Karan",
+        branch: "ECE",
+        DMC: "Yes", 
+    },
+
+    {
+        regn_no: "15ECE003",
+        name: "Kumar",
+        branch: "ECE",
+        DMC: "Yes", 
+    },
+
+    {
+        regn_no: "15ECE004",
+        name: "Ahmed",
+        branch: "ECE",
+        DMC: "Yes", 
+    },
+
+    {
+        regn_no: "15ME001",
+        name: "Abhishek",
+        branch: "ME",
+        DMC: "Yes", 
+    },
+    {
+        regn_no: "15ME002",
+        name: "Pawan",
+        branch: "ME",
+        DMC: "Yes", 
+    },
+    {
+        regn_no: "15ME003",
+        name: "Sagar",
+        branch: "ME",
+        DMC: "Yes", 
+    },
 ]
   
  function seedDB(){
@@ -56,7 +103,7 @@ var data = [
                         sem: "1",
                         dmc_no:"30223535",
                         regn_no: "152003003",
-                        roll_no: "3020461",
+                        regn_no: "3020461",
                         total_marks: "1000",
                         max_marks: "1200",
                         reappear: "0"        

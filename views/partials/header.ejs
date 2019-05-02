@@ -2,28 +2,77 @@
 <html>
     <head>
         <title>Examination Management</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" >
+        <link rel="stylesheet" href="/stylesheets/all.css" >
+        <link rel="stylesheet" href="/stylesheets/datatables.min.css">
         <link rel="stylesheet" href="/stylesheets/app.css" >
 
         </head>
-    <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/students">Student Mangement</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <body>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/students">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/students/new">New</a>
-      </li>
+          <div class="d-flex" id="wrapper">
+        
+            <!-- Sidebar -->
+            <div class=" border-right" id="sidebar-wrapper">
+              <div class="sidebar-heading">Student Information</div>
+              <div class="list-group list-group-flush">
+                <a href="/dashboard" class="list-group-item list-group-item-action "><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a href="/students" class="list-group-item list-group-item-action"><i class="fas fa-university"></i> All Students</a>
+                <a href="/students/cse" class="list-group-item list-group-item-action"><i class="fas fa-laptop-code"></i> Computer Science</a>
+                <a href="/students/ece" class="list-group-item list-group-item-action"><i class="fas fa-satellite-dish"></i> Electronics </a>
+                <a href="/students/me" class="list-group-item list-group-item-action"><i class="fas fa-drafting-compass"></i> Mechanical Engineering</a>
+                <a href="/students/ce" class="list-group-item list-group-item-action "><i class="fas fa-pencil-alt"></i> Civil Engineering</a>
+                <a href="/students/eee" class="list-group-item list-group-item-action "><i class="fas fa-bolt"></i> Electrical Engineering</a>
+                <a href="#" class="list-group-item list-group-item-action "><i class="fas fa-user-graduate"></i> Alumni</a>
+         
+               
+              </div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+        
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+        
+              <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom top-navbar">
+        
+             
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0 ">
+                    <li class="nav-item active">
+                   
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/students/new"><i class="fas fa-plus"></i> Add Students</a>
+                    </li>
+                  <%  if (!currentUser) { %>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Log in</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="/register"><i class="fas fa-user-plus"></i> Register</a>
+                    </li>
+                <%  } else { %>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-alt"></i> <%= currentUser.username %>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        
+                        
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                      </div>
+                    </li>
+                <%  }  %>
+                  </ul>
+                </div>
+              </nav>
+            
+             
       
-    </ul>
-    
-  </div>
-</nav>
-    
+          
+         
+  
