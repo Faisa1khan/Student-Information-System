@@ -1,6 +1,145 @@
 <% include ./partials/header %>
 
+<% var data = [];%>
+
+<div class="container">
+<div class="row">
+<div class="card card-dashboard col-md-2" style="width: 16em;">
+  <% var i = 0 
+                
+        %>
+        <% students.forEach(function(student){ %>
+        <% i++; %>
+        <%})%>
+
+      
+  <h1 class="card-img-top text-center" ><%= i %></h1>
+  <%data.push(i);%>
+  <div class="card-body">
+    <h5 class="card-title text-center"> Total Students</h5>
+  </div>
+</div>
 
 
+
+
+
+
+<div class="card card-dashboard col-md-2" style="width: 16em;">
+  <% var i = 0 
+                
+        %>
+        <% students.forEach(function(student){ %>
+            <% if (student.branch == "CSE") { %>
+        <% i++; %>
+        
+         <% } %>
+        <%})%>
+
+  <h1 class="card-img-top text-center" ><%= i %></h1>
+  <div class="card-body">
+    <h5 class="card-title text-center">Students in CSE</h5>
+  </div>
+</div>
+
+
+<div class="card card-dashboard col-md-2" style="width: 16em;">
+  <% var i = 0 
+                
+        %>
+        <% students.forEach(function(student){ %>
+            <% if (student.branch == "ECE") { %>
+        <% i++; %>
+        
+         <% } %>
+        <%})%>
+
+  <h1 class="card-img-top text-center" ><%= i %></h1>
+  <div class="card-body">
+    <h5 class="card-title text-center">Students in ECE</h5>
+  </div>
+</div>
+
+
+<div class="card card-dashboard col-md-2" style="width: 16em;">
+  <% var i = 0 
+                
+        %>
+        <% students.forEach(function(student){ %>
+            <% if (student.branch == "ME") { %>
+        <% i++; %>
+        
+         <% } %>
+        <%})%>
+
+  <h1 class="card-img-top text-center" ><%= i %></h1>
+  <div class="card-body">
+    <h5 class="card-title text-center">Students in ME</h5>
+  </div>
+</div>
+
+
+<div class="card card-dashboard col-md-2" style="width: 16em;">
+  <% var i = 0 
+                
+        %>
+        <% students.forEach(function(student){ %>
+            <% if (student.branch == "CE") { %>
+        <% i++; %>
+        
+         <% } %>
+        <%})%>
+
+  <h1 class="card-img-top text-center" ><%= i %></h1>
+  <div class="card-body">
+    <h5 class="card-title text-center">Students in CE</h5>
+  </div>
+</div>
+
+
+<div class="card card-dashboard col-md-2" style="width: 16em;">
+  <% var i = 0 
+                
+        %>
+        <% students.forEach(function(student){ %>
+            <% if (student.branch == "EEE") { %>
+        <% i++; %>
+        
+         <% } %>
+        <%})%>
+
+  <h1 class="card-img-top text-center" ><%= i %></h1>
+  <div class="card-body">
+    <h5 class="card-title text-center">Students in EEE</h5>
+  </div>
+</div>
+
+
+
+
+
+</div>
+
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'Number of students Anually',
+            backgroundColor: '#4e73df',
+            borderColor: '#4e73df',
+            data: [0, 10, 5, 2, 20, 30, 45]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
 
 <% include ./partials/footer %>

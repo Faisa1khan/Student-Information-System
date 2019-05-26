@@ -1,5 +1,5 @@
 <% include ./partials/header %>
-<div class="container ">
+<div class="container-fluid ">
 
 
   
@@ -9,43 +9,45 @@
     <th scope="col">Regn No.</th>
     <th scope="col">Name</th>
     <th scope="col">Branch</th>
-    <th scope="col">DMC Taken</th>
-    <th scope="col">Updated On</th>
+    <th scope="col">Batch</th>
     <th scope="col">Actions</th>
   </tr>
 </thead>
 <tbody>
+  <% var i = 0 %>
 <% students.forEach(function(student){ %>
-
+  <% 
+          i++;
+  %>
   <tr>
     <th scope="row"><%= student.regn_no %></th>
     <td><%= student.name %></td>
     <td><%= student.branch %></td>
-    <td><%= student.DMC %></td>
-    <td><%= student.created.toDateString() %></td>
+    <td><%= student.batch%> - <%= student.batch + 4 %></td>
   
     <td>
     <ul id="action">
     <li>
-    <a href="/students/<%=student._id %>" class="fas fa-eye"></a >
+    <a href="/students/<%=student._id %>/result" class="fas fa-eye" data-toggle="tooltip" data-placement="top" title="View Student"></a >
     </li>
 
     <li>
-    <a href="/students/<%=student._id %>/edit" class="fas fa-user-edit"></a >  
+    <a href="/students/<%=student._id %>/edit" class="fas fa-user-edit" data-toggle="tooltip" data-placement="top" title="Edit Student"></a >  
     </li>
 
     <li>
     <form id="delete" action="/students/<%= student._id%>?_method=DELETE" method="POST">
-    <button class="fas fa-trash-alt"></button></form>
+    <button class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Delete Student"></button></form>
     
     
     </li>
-
-    </ul>
+    <li>
+        <a href="/students/<%=student._id %>/results/new" class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="Add Result">Result</a >  
+        </li>
+</ul>
     </td>
   </tr>
   <%})%>
-
 </tbody>
 </table>
 

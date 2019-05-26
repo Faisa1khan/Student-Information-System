@@ -7,6 +7,7 @@ var resultSchema = new mongoose.Schema({
     total_marks: String,
     max_marks: String,
     reappear: String,
+    dmc_taken: String
 });
 
 module.exports =  mongoose.model("Result", resultSchema);

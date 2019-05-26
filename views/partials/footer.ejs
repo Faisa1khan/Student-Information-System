@@ -6,7 +6,14 @@
 
  
  <script>
-   $('.mydatatable').DataTable();
+
+   $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  });
+  
+    $('.mydatatable').DataTable({
+        "pagingType": "simple_numbers"
+    });
    </script>
 
 </body>

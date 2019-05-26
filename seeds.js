@@ -1,6 +1,7 @@
 var mongoose  = require("mongoose"),
 Student            = require("./models/student"),
 Result               = require("./models/result");
+Dmc              = require("./models/dmc");
 
 
 
@@ -10,24 +11,28 @@ var data = [
            name: "Chaman",
            branch: "CSE",
            DMC: "Yes", 
+           batch:  "2015"
     },
     {
         regn_no: "15CSE002",
            name: "Faisal",
            branch: "CSE",
            DMC: "No", 
+           batch:  "2015"
     },
     {
         regn_no: "15CSE003",
         name: "Sanaullah",
         branch: "CSE",
         DMC: "Yes", 
+        batch:  "2015"
     },
     {
         regn_no: "15CSE004",
         name: "Sohit",
         branch: "CSE",
         DMC: "Yes", 
+        batch:  "2015"
     },
 
     {
@@ -35,6 +40,7 @@ var data = [
         name: "Touhid Alvi",
         branch: "CSE",
         DMC: "Yes", 
+        batch:  "2015"
     },
 
     {
@@ -42,6 +48,7 @@ var data = [
         name: "Alvi",
         branch: "ECE",
         DMC: "Yes", 
+        batch:  "2015"
     },
 
     {
@@ -49,6 +56,7 @@ var data = [
         name: "Karan",
         branch: "ECE",
         DMC: "Yes", 
+        batch:  "2015"
     },
 
     {
@@ -56,6 +64,7 @@ var data = [
         name: "Kumar",
         branch: "ECE",
         DMC: "Yes", 
+        batch:  "2015"
     },
 
     {
@@ -63,6 +72,7 @@ var data = [
         name: "Ahmed",
         branch: "ECE",
         DMC: "Yes", 
+        batch:  "2015"
     },
 
     {
@@ -70,18 +80,21 @@ var data = [
         name: "Abhishek",
         branch: "ME",
         DMC: "Yes", 
+        batch:  "2015"
     },
     {
         regn_no: "15ME002",
         name: "Pawan",
         branch: "ME",
         DMC: "Yes", 
+        batch:  "2015"
     },
     {
         regn_no: "15ME003",
         name: "Sagar",
         branch: "ME",
         DMC: "Yes", 
+        batch:  "2015"
     },
 ]
   
@@ -98,6 +111,24 @@ var data = [
                  console.log(err);
              } else {
                 console.log("added a student");
+
+                // Dmc.create(
+                //     {
+                //         sem: "1",
+                //         dmc_no:"30223535",
+                //         roll_no: "3020461",
+                //         taken: "No"        
+                                     
+                //     }, function(err, dmc){
+                //         if(err){
+                //             console.log(err);
+                //         } else {
+                //                 student.dmc.push(dmc);
+                                
+                //                 console.log("ADDED DMC");
+                //         }
+                //     });
+
                 Result.create(
                     {
                         sem: "1",
@@ -106,20 +137,26 @@ var data = [
                         regn_no: "3020461",
                         total_marks: "1000",
                         max_marks: "1200",
-                        reappear: "0"        
+                        reappear: "0",
+                        dmc_taken: "No"      
                                      
                     }, function(err, result){
                         if(err){
                             console.log(err);
                         } else {
+                            console.log(result);
                                 student.results.push(result);
                                 student.save();
-                                console.log("Created new comment");
+                                console.log("ADDED RESULT");
                         }
                     });
+
+                    
              }
             });
          });
+    
+
      });
    
      
