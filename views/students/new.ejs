@@ -5,22 +5,38 @@
 <form action="/students" method="POST">
 
 <div class="form-row">
-<div class="form-group col-md-6">
+<div class="form-group col-md-3">
 <label for"regn_no">Registration No.</label>
 <input type="text"  id="regn_no" class="form-control " name="student[regn_no]" placeholder="regn_no" >
 </div>
 
-<div class="form-group col-md-6">
+<div class="form-group col-md-3">
 <label for"name">Name</label>
 <input type="text"  id="name" class="form-control " name="student[name]" placeholder="name" >
 </div>
 
-<div class="form-group col-md-6">
-  <label for"year">Year</label>
+<div class="form-group col-md-3">
+<label for"name">Father Name</label>
+<input type="text"  id="name" class="form-control " name="student[father_n]" placeholder="father name" >
+</div>
+
+<div class="form-group col-md-3">
+<label for"name">Mother Name</label>
+<input type="text"  id="name" class="form-control " name="student[mother_n]" placeholder=" mother name" >
+</div>
+
+
+<div class="form-group col-md-3">
+<label for"name">City</label>
+<input type="text"  id="name" class="form-control " name="student[city]" placeholder="city" >
+</div>
+
+<div class="form-group col-md-3">
+  <label for"year">Year Batch</label>
   <input type="text"  id="year" class="form-control " name="student[batch]" placeholder="Batch" >
   </div>
 
-<div class="form-group col-md-6">
+<div class="form-group col-md-3">
 <label for="branch">Branch</label>
         <select id="branch" class="form-control" name="student[branch]">
           <option selected>Choose Branch</option>
@@ -40,9 +56,10 @@
 
 
 
-<button type="submit" class="btn btn-primary">Submit</button>
+
 
 </div>
+<button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 </div>

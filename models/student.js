@@ -4,8 +4,10 @@ var mongoose = require("mongoose");
 var studentSchema = new mongoose.Schema({
     regn_no: String,
     name: String,
+    father_n: String,
+    mother_n: String,
+    city: String,
     branch: String,
-    DMC: String, 
     batch: Number,
     image: String,
     created:  {type: Date, default: Date.now},

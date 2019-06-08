@@ -24,7 +24,7 @@ router.get("/dashboard", function(req, res){
 
 });
 
-router.get("/students", function(req, res){
+router.get("/students",isLoggedIn, function(req, res){
     console.log(req.user);
   Student.find({}, function(err, students){
       if (err){
@@ -153,6 +153,19 @@ router.delete("/students/:id", isLoggedIn,function(req,res){
             res.redirect("/students");
           }
     });
+    
+});
+
+
+router.get("/students/:id/about",function(req,res){
+  
+    Student.findById(req.params.id, function(err, student){
+        if(err){
+            res.redirect("/students");
+        }else{
+         res.render("students/about", {student: student});
+        }
+     });
     
 });
 

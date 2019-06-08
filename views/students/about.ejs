@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Result</title>
+        
+        <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" >
+        <link rel="stylesheet" href="/stylesheets/all.css" >
+        <link rel="stylesheet" href="/stylesheets/datatables.min.css">
+        <link rel="stylesheet" href="/stylesheets/app.css" >
+         <style>
+         .dataTables_info, .paginate_button, .dataTables_filter{
+           display: none;
+         }
+
+         .dt-buttons {
+           float: right;
+           padding: 1em 0;
+           position: absolute;
+            bottom: 1em;
+             right: 1em;
+         }
+
+         .student-table{
+    box-shadow:none;
+  }
+
+         
+         </style>
+        </head>
+        <body>
+
+          <div class="d-flex" id="wrapper">
+        
+            <!-- Sidebar -->
+            <div class=" border-right" id="sidebar-wrapper">
+              <div class="sidebar-heading"><%= student.name %></div>
+              <div class="list-group list-group-flush">
+                  <a href="#" class="list-group-item list-group-item-action ">About</a>
+                <a href="/students/<%=student._id %>/result" class="list-group-item list-group-item-action ">Performance</a>
+                <!-- <a href="/students/<%=student._id %>/dmc" class="list-group-item list-group-item-action ">DMC</a> -->
+           
+         
+               
+              </div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+        
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+        
+              <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom top-navbar">
+        
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/students/<%= student._id%>/results/new">Add Result</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/students">Home</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </nav>
+      
+<div class="">
+<!-- <form action="/students/<%= student._id%>?_method=PUT" method="POST">
+<div class="form-row">
+        <div class="form-group col-md-6">
+        <label for"regn_no">Registration No.</label>
+        <input type="text"  id="regn_no" class="form-control " name="student[regn_no]" value = "<%=student.regn_no %>">
+        </div>
+        
+        <div class="form-group col-md-6">
+        <label for"name">Name</label>
+        <input type="text"  id="name" class="form-control " name="student[name]"  value = "<%=student.name %>">
+        </div>
+
+        <div class="form-group col-md-6">
+        <label for"name">Mother Name</label>
+        <input type="text"  id="name" class="form-control " name="student[mother_n]" value = "<%=student.mother_n %>">
+        </div>
+
+          <div class="form-group col-md-6">
+        <label for"name">Father Name</label>
+        <input type="text"  id="name" class="form-control " name="student[father_n]"  value = "<%=student.father_n %>">
+        </div>
+
+          <div class="form-group col-md-6">
+        <label for"name">City</label>
+        <input type="text"  id="name" class="form-control " name="student[city]"  value = "<%=student.city %>">
+        </div>
+        
+        <div class="form-group col-md-6">
+          <label for"year">Year</label>
+          <input type="text"  id="year" class="form-control " name="student[batch]"  value = "<%=student.batch %>">
+          </div>
+        
+        <div class="form-group col-md-6">
+        <label for="branch">Branch</label>
+                <select id="branch" class="form-control" name="student[branch]" value = ""</select>>
+                  <option selected><%=student.branch %></option>
+                  <option>CSE</option>
+                  <option>CE</option>
+                  <option>ME</option>
+                  <option>ECE</option>
+                  <option>EEE</option>
+                </select>
+        </div>
+        
+        
+  
+        </div>
+          <button type="submit" class="btn btn-primary">Update Profile</button>
+</form>
+-->
+<table class="table m-0">
+   <tbody>
+        <tr>
+            <th scope="row">Registration No.</th>
+            <td> <%=student.regn_no %></td>
+        </tr>
+        <tr>
+            <th scope="row">Name</th>
+            <td><%=student.name %></td>
+        </tr>
+        <tr>
+            <th scope="row">Father Name</th>
+            <td><%=student.father_n %></td>
+        </tr>
+        <tr>
+            <th scope="row">Mother Name</th>
+            <td><%=student.mother_n %></td>
+        </tr>
+        <tr>
+            <th scope="row">Branch</th>
+            <td><%=student.branch %></td>
+        </tr>
+      
+         <tr>
+            <th scope="row">Joining Year</th>
+            <td><%=student.batch %></td>
+        </tr>
+        
+
+         <tr>
+            <th scope="row">Location</th>
+            <td><%=student.city %></td>
+        </tr>
+    </tbody>
+      </table>
+
+
+      
+
+
+
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js" ></script>
+
+
+
+        </body>
+</html>
