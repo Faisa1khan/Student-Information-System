@@ -32,7 +32,7 @@ router.get("/login", function(req, res){
 // login logic
 router.post("/login", passport.authenticate("local",
 {
-       successRedirect: "/students",
+       successRedirect: "/dashboard",
        failureRedirect: "login"
 }), function(req, res){
 
@@ -42,7 +42,7 @@ router.post("/login", passport.authenticate("local",
 
 router.get("/logout", function(req, res){
     req.logout();
-    res.redirect("/students")
+    res.redirect("/dashboard")
 });
 
 function isLoggedIn(req, res, next){

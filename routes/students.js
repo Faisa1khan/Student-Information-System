@@ -7,10 +7,10 @@ var  Student      = require("../models/student.js");
 //ROUTES
 
 router.get("/", function(req, res){
-    res.redirect("students");
+    res.redirect("dashboard");
 });
 
-router.get("/dashboard", function(req, res){
+router.get("/dashboard", isLoggedIn,function(req, res){
 
     Student.find({}, function(err, students){
         if (err){
